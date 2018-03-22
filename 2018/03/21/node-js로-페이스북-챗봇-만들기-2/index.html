@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>node.js로 페이스북 챗봇 만들기 2 | title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 개발을 하기 위한 환경 준비* node.js먼저 node.js를 설치하세요. node.js 공식 홈페이지  버전이 두 개예요.8.10">
+<meta name="keywords" content="aws lambda,node.js,챗봇,chatbot,facebook messenger">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js로 페이스북 챗봇 만들기 2">
+<meta property="og:url" content="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/index.html">
+<meta property="og:site_name" content="title">
+<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 개발을 하기 위한 환경 준비* node.js먼저 node.js를 설치하세요. node.js 공식 홈페이지  버전이 두 개예요.8.10">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/node.png">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/terminal.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/vscode.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/mouseright.PNG">
+<meta property="og:updated_time" content="2018-03-22T02:42:14.272Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node.js로 페이스북 챗봇 만들기 2">
+<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 개발을 하기 위한 환경 준비* node.js먼저 node.js를 설치하세요. node.js 공식 홈페이지  버전이 두 개예요.8.10">
+<meta name="twitter:image" content="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/node.png">
+  
+    <link rel="alternate" href="/atom.xml" title="title" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">title</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">subtitle</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="검색"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ohseunghyeon.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node-js로-페이스북-챗봇-만들기-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/" class="article-date">
+  <time datetime="2018-03-21T12:09:47.000Z" itemprop="datePublished">2018-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/chatbot/">chatbot</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node.js로 페이스북 챗봇 만들기 2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ol>
+<li><a href="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/">서문</a></li>
+<li>개발을 하기 위한 환경 준비<ul>
+<li>node.js</li>
+<li>Visual Studio Code</li>
+<li>ngrok</li>
+</ul>
+</li>
+<li>node.js로 기본적인 서버 만들기</li>
+<li>facebook messenger와 서버 연동하기</li>
+<li>AWS lambda에 올리기</li>
+</ol>
+<h1 id="1-개발을-하기-위한-환경-준비"><a href="#1-개발을-하기-위한-환경-준비" class="headerlink" title="1. 개발을 하기 위한 환경 준비"></a>1. 개발을 하기 위한 환경 준비</h1><h2 id="node-js"><a href="#node-js" class="headerlink" title="* node.js"></a>* node.js</h2><p>먼저 node.js를 설치하세요. <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">node.js 공식 홈페이지</a></p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/node.png" title="node.js 공식 홈페이지">
+<p>버전이 두 개예요.<br>8.10.0 LTS<br>9.8.0 현재버전</p>
+<p>아마 미래에 이 글을 보게될 경우 버전은 당연히 사진과 다릅니다. 아무 버전이나 깔아도 상관 없어요. 정 못 고르시겠으면 동전을 던지고 앞면이 나오면 오른쪽 뒷면이 나오면 왼쪽 버전을 선택하세요.</p>
+<p>설치하는 과정은 간단합니다. 다운로드 받은 파일을 실행하고 다음 다음 다음 다음을 눌러주세요. 끈기를 잃지 않고 다음을 반복해서 누르시면 설치가 완료됩니다.</p>
+<p>단, 이후 설치가 되었는지 확인하는 과정이 반드시 필요합니다. 터미널에서 다음 명령어를 입력하세요.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<p>사진으로 보여드릴게요.</p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/terminal.PNG" title="node.js 버전 확인">
+<p>터미널이 뭔지 모르시는 분에게<br>터미널은 윈도우를 쓰신다면 왼쪽 하단의 윈도우 버튼을 누르신 후 “명령 프롬프트”라고 입력하시면 나오는 애예요. 걔를 실행시키고 “ipconfig”이라고 입력해보세요. 그럼 ip를 알 수 있어요.(windows의 경우)</p>
+<p>명령 프롬프트라고 해도 안 나오면</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">윈도우 버튼 + r</span><br></pre></td></tr></table></figure>
+<p>누르신 다음에</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br></pre></td></tr></table></figure>
+<p>를 입력하고 확인을 누르세요.<br>참고로 윈도우 버튼은 키보드 좌측 Ctrl 키와 Alt 키 사이에 있어요. (Mac을 쓰신다면 달라요! 물어보지 마세요. 인터넷에 검색해요!)</p>
+<p>글이 불필요하게 길어지고 있네요.</p>
+<p>무튼 node.js를 깔았으면 터미널에서 버전을 확인하는 명령어를 입력하고 제대로 설치가 되었는지 확인하세요. 반드시.</p>
+<h2 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="* Visual Studio Code"></a>* Visual Studio Code</h2><p>“비쥬얼 스튜디오 코드”라고 읽으시면 돼요. 설치하러 가 봐요. <a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code 공식 홈페이지</a></p>
+<p>아 뭔지 설명해야겠구나. 얘는 개발할 때 쓰는 메모장 상위호환 판이에요. 좋은 아이죠. 가벼운 웹 개발을 하시는 분들은 고급 메모장을 많이 사용하시는데요. 생각나는 애들이 <a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a>, <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a> 등이 있어요. 물론 메모장..이 아니라 텍스트 에디터라고 할게요. 텍스트 에디터는 참 많아요. 근데 javascript 개발할 땐 제 생각에 VSCode(Visual Studio Code)가 짱이에요. 그렇다고요. 그러니까 <a href="https://code.visualstudio.com" target="_blank" rel="noopener">VSCode</a>를 깔아요.</p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/vscode.PNG" title="node.js 버전 확인">
+<p>위에 보시면 Download for Windows가 있어요. 맥 쓰시면 맥 버전용, Linux 쓰시면 해당 버전에 맞는 다운로드 버튼이 나타날 겁니다. 그냥 다운 받으세요. 그리고 깔아요. 설치 과정은 node.js와 동일해요. 그냥 다음을 계속 눌러요.</p>
+<p><a href="http://lovesoda.tistory.com/20" target="_blank" rel="noopener">여기 멋진 분이 쓴 글이 있네요.</a> 설치 과정을 잘 적어두셨어요. 참고해요.</p>
+<p>한 가지 Tip을 드리자면 설치 도중 “Code(으)로 열기”작업을 Windows 탐색기 파일의 상황에 맞는 메뉴에 추가, 디렉터리의 상황에 맞는 메뉴에 추가 항목을 <strong>체크</strong>하세요. 폴더에서 코드 열 때 편해요!</p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/mouseright.PNG" title="Open with Code">
+<p>폴더나 소스 파일 마우스 우클릭 시 중간에 Open with Code라고 생겨요.</p>
+<p>아 넘 오래 적어써.. 낼 마저 적어야지</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/" data-id="cjf1wwte100016kuxfove8ics" class="article-share-link">공유</a>
+      
+        <a href="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/#disqus_thread" class="article-comment-link">댓글</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/21/눈이-왔다/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">이전</strong>
+      <div class="article-nav-title">눈이 왔다.</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">카테고리</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/chatbot/">chatbot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/일기/">일기</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">태그</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/단지우유/">단지우유</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/빙그레/">빙그레</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오디맛/">오디맛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">태그 클라우드</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/aws-lambda/" style="font-size: 20px;">aws lambda</a> <a href="/tags/chatbot/" style="font-size: 20px;">chatbot</a> <a href="/tags/facebook-messenger/" style="font-size: 20px;">facebook messenger</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/단지우유/" style="font-size: 10px;">단지우유</a> <a href="/tags/빙그레/" style="font-size: 10px;">빙그레</a> <a href="/tags/오디맛/" style="font-size: 10px;">오디맛</a> <a href="/tags/챗봇/" style="font-size: 20px;">챗봇</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">node.js로 페이스북 챗봇 만들기 2</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/21/눈이-왔다/">눈이 왔다.</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/">node.js로 페이스북 챗봇 만들기-1</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/20/오디맛-단지-우유/">오디맛 단지 우유</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/18/이-블로그를-시작하게-되기까지/">이 블로그를 시작하게 되기까지</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 SeungHyeon Oh<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'ohseunghyeon';
+  
+  var disqus_url = 'https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
