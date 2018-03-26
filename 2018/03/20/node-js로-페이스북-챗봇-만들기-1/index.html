@@ -7,19 +7,19 @@
   
   <title>node.js로 페이스북 챗봇 만들기-1 | title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 서문독자 대상이 글의 대상은 프로그래밍에 대한 지식이 전혀 없지는 않지만 초급이라 부르">
+  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 서문독자 대상이 글은 프로그래밍에 대한 아주 얕은 지식을 가진 분을 대상으로 합니다.">
 <meta name="keywords" content="aws lambda,node.js,챗봇,chatbot,facebook messenger">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js로 페이스북 챗봇 만들기-1">
 <meta property="og:url" content="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 서문독자 대상이 글의 대상은 프로그래밍에 대한 지식이 전혀 없지는 않지만 초급이라 부르">
+<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 서문독자 대상이 글은 프로그래밍에 대한 아주 얕은 지식을 가진 분을 대상으로 합니다.">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/facebook_adidas.png">
-<meta property="og:updated_time" content="2018-03-26T02:47:05.034Z">
+<meta property="og:updated_time" content="2018-03-26T23:46:18.076Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js로 페이스북 챗봇 만들기-1">
-<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 서문독자 대상이 글의 대상은 프로그래밍에 대한 지식이 전혀 없지는 않지만 초급이라 부르">
+<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  1. 서문독자 대상이 글은 프로그래밍에 대한 아주 얕은 지식을 가진 분을 대상으로 합니다.">
 <meta name="twitter:image" content="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/facebook_adidas.png">
   
     <link rel="alternate" href="/atom.xml" title="title" type="application/atom+xml">
@@ -115,18 +115,17 @@
 <li>facebook messenger와 서버 연동하기</li>
 <li>AWS lambda에 올리기</li>
 </ol>
-<h1 id="1-서문"><a href="#1-서문" class="headerlink" title="1. 서문"></a>1. 서문</h1><h2 id="독자-대상"><a href="#독자-대상" class="headerlink" title="독자 대상"></a>독자 대상</h2><p>이 글의 대상은 프로그래밍에 대한 지식이 전혀 없지는 않지만 초급이라 부르기 힘든 수준의 닝겐입니다. 어디서 들어본 건 좀 있지만 작성은 못 하고, 자잘하고 쓰잘떼기 없는 지식들을 상당히 많이 담고 있습니다. 저 또한 이 글의 실제 목적이 무엇인지는 알지 못함이며 그저 기록을 남기는 데 충실하겠다는 생각으로 적고 있습니다. 글이 늘어지는 건 본래 필자의 습성이며 남는 것이 글이며 기록이며 기록은 중요하다는 사상의 반영임을 미리 알립니다.</p>
-<p>이 글은 저의 경험을 남기기 위한 의도로 작성됩니다. 딱히 이쁘게 쓰려는 의도 또한 없으며 고민을 하고 쓸 생각이 전혀 없습니다. <del>또한 당장 이 블로그에는 댓글을 다는 기능마저 없습니다. 그래서 질문을 남길 수 없으며, 이 글을 읽으며 생기는 의문을 해소하기 어려울 것입니다. (그냥.. 그렇다고요…)</del></p>
-<p>저는 최근 <a href="https://www.facebook.com/messages/t/Originals.kr" target="_blank" rel="noopener">아디다스 오리지널스</a> 챗봇을 제작했습니다. (기획 X, 코딩 O)<br>이 챗봇은 매우 간단한 구조로 되어 있습니다.<br>그래서 이 정도의 간단한 구조라면 누군가 보고 따라해도 만들 수 있는 수준이겠다.<br>라고 판단되어 글을 적기로 했어요.</p>
+<h1 id="1-서문"><a href="#1-서문" class="headerlink" title="1. 서문"></a>1. 서문</h1><h2 id="독자-대상"><a href="#독자-대상" class="headerlink" title="독자 대상"></a>독자 대상</h2><p>이 글은 프로그래밍에 대한 아주 얕은 지식을 가진 분을 대상으로 합니다. 그래서 이 글은 자잘하고 쓰잘떼기 없는 지식들을 상당히 많이 담고 있습니다. 저 또한 이 글의 실제 목적이 무엇인지는 알지 못함이며 그저 기록을 남기는 데 충실하겠다는 생각으로 적고 있습니다.</p>
+<p>저는 최근 <a href="https://www.facebook.com/messages/t/Originals.kr" target="_blank" rel="noopener">아디다스 오리지널스</a> 챗봇을 제작했습니다. (기획 X, 코딩 O)<br>이 챗봇은 매우 간단한 구조로 되어 있습니다.<br><em>“그래서 이 정도의 간단한 구조라면 누군가 보고 따라해도 만들 수 있는 수준이겠다.”</em>고 판단되어 글을 적기로 했어요.</p>
 <p>다음은 그 구조에 대한 간략한 단계입니다.</p>
-<p><strong>1. 페이스북 챗봇에서 사용자가 말을 쳐요.</strong><br><strong>2. 그 말이 서버로 가고 서버는 대답을 찾아서 답장해요</strong><br><strong>3. 페이스북 챗봇에 대답이 뿌려져요!</strong></p>
-<p>여기서 세 가지가 필요하다는 사실을 알게 돼요.</p>
-<p><strong>1. 사용자</strong><br><strong>2. 사용자가 말을 칠 곳</strong><br><strong>3. 그 말을 받아줄 서버!!</strong></p>
-<p><strong>사용자</strong>는 넘어가죠.<br>다음 2번 <strong>말을 칠 곳</strong>인 <strong>채팅창</strong>은 페이스북 메신저를 쓰면 돼요!<br>다음과 같이 생겼죠.</p>
+<p><strong>1. 페이스북 챗봇에서 사용자의 입력</strong><br><strong>2. 서버로 요청, 서버는 대답을 찾아서 응답</strong><br><strong>3. 페이스북 챗봇에서 사용자 입력에 대한 대답 출력</strong></p>
+<p>이 절차를 위해서는 세 가지 요소가 필요합니다.</p>
+<p><strong>1. 사용자</strong><br><strong>2. 사용자가 채팅을 할 수 있는 플랫폼</strong><br><strong>3. 사용자 입력을 처리할 서버</strong></p>
+<p><strong>사용자</strong>는 말 안 해도 아시죠?<br>다음 <strong>2번</strong>인 <strong>채팅창</strong>은 페이스북 메신저를 사용할 생각입니다. 이와 비슷한 플랫폼은 카카오톡 플러스 친구, 네이버톡톡, 슬랙 등 각종 메신저 플랫폼이 될 수 있습니다. (모든 메신저가 가능한 것은 아닙니다. 이런 기능을 제공할 경우에만 가능합니다.)</p>
 <img src="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/facebook_adidas.png" title="아디다스 오리지널스 챗봇">
-<p>그냥 facebook messenger예요. 친구를 추가하고 메신저에서 서로 대화를 나눌 수 있듯이 챗봇하고도 대화를 나눌 수 있어요. 보통은 페이스북 페이지를 만들고 그 페이지의 채팅창을 챗봇이랑 연동해요.</p>
-<p>다음으로 <strong>서버</strong>인데요. 그 서버는 node.js로 만들 거예요. node.js가 뭔지 모르신다면 여기 <a href="https://ko.wikipedia.org/wiki/Node.js" target="_blank" rel="noopener">위키백과</a>를 보셔도 좋고 <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">node.js 공식 홈페이지</a>를 참조하셔도 좋아요. 간단히 설명하자면 Javascript(얘도 프로그래밍 언어)를 사용하여 서버를 만들 수 있는 프로그램이에요. (서버 뿐만 아니라 이런저런 애들도 만들 수도 있어요. 또한 서버라는 표현조차 상대적인 의미일 뿐이기에 완벽한 단어는 아니라 생각됩니다.)</p>
-<p>서문은 여기까지예요. 다음 포스팅에서는 개발에 필요한 프로그램들을 설치할 거예요.</p>
+<p>이 사진은 아디다스 오리지널스 챗봇의 도입 부분입니다. 페이스북 페이지를 생성한 후 해당 페이지의 웹훅(webhook)을 연결하면 이렇게 작동합니다. 웹훅은 훅은 hook를 의미합니다. 즉, 갈고리라는 뜻인데요, 이 갈고리를 다른 곳에 연결한다는 의미를 갖고 있습니다. 실제 동작은 뒤에서 알아보도록 하겠습니다.</p>
+<p>다음은 <strong>서버</strong>입니다. 서버는 node.js를 사용하여 만들 것입니다. node.js에 대한 설명은 <a href="https://ko.wikipedia.org/wiki/Node.js" target="_blank" rel="noopener">위키백과</a>나 <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">node.js 공식 홈페이지</a>를 참조하십시오. 간단히 설명하자면, Javascript를 사용하여 서버를 만들 수 있는 플랫폼입니다.</p>
+<p><a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">환경설정 구성으로 가기</a></p>
 
       
     </div>
