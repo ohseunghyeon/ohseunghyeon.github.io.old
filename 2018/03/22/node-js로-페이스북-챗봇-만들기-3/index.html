@@ -5,18 +5,28 @@
   
 
   
-  <title>title</title>
+  <title>node.js로 페이스북 챗봇 만들기 3 | title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Back Street Assassin Cat">
-<meta property="og:type" content="website">
-<meta property="og:title" content="title">
-<meta property="og:url" content="https://ohseunghyeon.github.io/index.html">
+  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world이 글의 독자는 서버가 뭔지">
+<meta name="keywords" content="aws lambda,node.js,챗봇,chatbot,facebook messenger">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js로 페이스북 챗봇 만들기 3">
+<meta property="og:url" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="Back Street Assassin Cat">
+<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world이 글의 독자는 서버가 뭔지">
 <meta property="og:locale" content="ko">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/open_with_code.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/new_file.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/just_made.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/hello_world.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/cmd_hello.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/f5.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/console_has.PNG">
+<meta property="og:updated_time" content="2018-03-26T02:47:05.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="title">
-<meta name="twitter:description" content="Back Street Assassin Cat">
+<meta name="twitter:title" content="node.js로 페이스북 챗봇 만들기 3">
+<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world이 글의 독자는 서버가 뭔지">
+<meta name="twitter:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/open_with_code.PNG">
   
     <link rel="alternate" href="/atom.xml" title="title" type="application/atom+xml">
   
@@ -69,156 +79,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-node-js로-페이스북-챗봇-만들기-4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/" class="article-date">
-  <time datetime="2018-03-24T07:26:02.000Z" itemprop="datePublished">2018-03-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/chatbot/">chatbot</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/">node.js로 페이스북 챗봇 만들기 4</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ol>
-<li><a href="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/">서문</a></li>
-<li><a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">개발을 하기 위한 환경 준비</a><ul>
-<li>node.js</li>
-<li>Visual Studio Code</li>
-<li>ngrok</li>
-</ul>
-</li>
-<li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">node.js로 기본적인 서버 만들기</a><ul>
-<li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">hello world</a></li>
-<li><a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4">http 서버 만들기</a></li>
-</ul>
-</li>
-<li>facebook messenger와 서버 연동하기</li>
-<li>AWS lambda에 올리기</li>
-</ol>
-<h1 id="3-node-js로-기본적인-서버-만들기"><a href="#3-node-js로-기본적인-서버-만들기" class="headerlink" title="3. node.js로 기본적인 서버 만들기"></a>3. node.js로 기본적인 서버 만들기</h1><h2 id="HTTP-서버-만들기"><a href="#HTTP-서버-만들기" class="headerlink" title="* HTTP 서버 만들기"></a>* HTTP 서버 만들기</h2><p>HTTP는 인터넷에서 문서를 주소 받는 데 사용하는 규칙입니다. 그 기반은 TCP/IP이며 형식은 헤더와 바디로 이루어져 있죠.</p>
-<p>몇 가지 기본적인 HTTP에 대한 사항을 설명하겠습니다. 보통 인터넷을 하기 위해 브라우저를 사용합니다. 웹 브라우저 또는 클라이언트라고 부릅니다. 클라이언트라고 부르는 이유는 HTTP 서버에서 문서를 가져오기 때문입니다. 서버가 있고 그 서버에 요청을 하는 입장을 클라이언트라고 합니다.</p>
-<p><strong> Server - Client </strong></p>
-<p>그냥 상대적인 입장에 대해 일컫는 말입니다.</p>
-<p>일반적으로 웹 사이트를 열 때 브라우저에서 주소창에 <a href="http://abc.com" target="_blank" rel="noopener">http://abc.com</a> 과 같은 형태로 URL을 입력합니다. 이 때 http는 프로토콜이며 abc.com은 도메인 이름입니다. 도메인 이름은 DNS(도메인 네임 시스템)에 의해 매칭되는 IP로 변경되며 이 IP 주소를 통해 서버 컴퓨터의 위치를 찾아갑니다.</p>
-<p>위의 내용은 몰라도 돼요. 길어질까봐 대충 씁니다.</p>
-<p>무튼 서버가 있으면 클라이언트가 HTTP request(요청)을 보낼 수 있고 그럼 서버가 response를 줍니다. 그 결과 클라이언트는 특정 정보를 받을 수 있게 돼요.</p>
-<p>앞서 설명한 챗봇도 이와 같습니다. 챗봇에 사용자가 말을 입력하면 이 말이 서버로 전달됩니다. 정확히는 챗봇에서 서버로 요청을 보냅니다. “이런 말이 왔어. 대답을 줘”라고 의역할 수 있겠죠. 그럼 서버는 대답을 주고 이를 챗봇에 보여줍니다.</p>
-<p>좋아요. 서버나 만들어 봅시다.</p>
-<p>앞서 server.js 파일에 console.log(“hello world”); 뭐 이런 걸 쳤는데 그거 지우세요.</p>
-<p>그리고 이렇게 치세요</p>
-<img src="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/http_require.PNG" title="require를 해요.">
-<p>http라는 애가 있어요. 근데 걔를 여기로 데려옵니다. 여기는 server.js 파일을 말하는 거예요. 이 친구가 서버를 잘 만들어요. 그냥 국수 가게 사장님이 국수를 잘 마는 거랑 비슷해요. 그럼 얘는 서버 가게 사장님 정… 죄송합니다.</p>
-<p>저렇게 치면 <strong>require(‘http’)</strong> 얘가 http라는 애를 데려오는 애고요. (함수라고 불러요.)<br>var http라고 치면 http라는 변수를 만들게 되고 그 변수에 데려온 http를 넣게 돼요.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a = require(&apos;http&apos;);</span><br></pre></td></tr></table></figure>
-<p>위와 같이 쳐도 상관 없어요. a라는 변수에 http를 넣어줬어요. 정확히는 넣어줬다기보다는 연결해줬다는 표현이 맞을 것 같네요. 무튼 우린 http든 a든 좌측에 적은 이름을 가지고 얘가 지닌 걸 사용할 수 있어요. 깡패 같네요.</p>
-<p>앞에서 console.log()를 설명할 때 console이라는 애한테서 log라는 함수를 실행하게 하는 거라고 했잖아요. 이 때 console이라는 애는 마치 var console = require(‘console’) 와 같은 작업이 이미 되어 있다고 봐도 무방해요. 이런 애를 글로벌(전역) 변수라고 하는데… 뭐… 몰라도 돼요. 그냥 아 console 쟤는 밖에 걍 돌아다니는 애고 http는 데려와야 쓰는 애구나 그렇게 생각하세요. 그냥 데려와서 삥 뜯듯이 걔가 가진 거 쓰고 그러는 건 다를 바 없잖아요?</p>
-<p>무튼 http라는 애를 가져왔는데 얘가 가진 함수 중에 createServer라는 게 있거든요? 얘를 사용하면 서버가 단번에 만들어져요.</p>
-<p>해보죠.</p>
-<img src="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/createServer.PNG" title="쟤가 가진 것 중에 createServer">
-<p>얘가 createServer라는 함수를 가진 걸 발견했어요. function이라고 적혀 있죠? 그게 함수잖아요. 네. 맞아요. 그렇다고요. 마저 적읍시다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line"></span><br><span class="line">var server = http.createServer();</span><br></pre></td></tr></table></figure>
-<p>앞서 <strong>console.log()</strong> 를 실행하면 터미널에 log가 찍혔어요. <strong>console.log(‘hello world’)</strong>를 실행하면 터미널에 hello world가 찍혔죠. 근데 <strong>http.createServer()</strong>를 실행하면 얘가 서버를 뱉어요. 그럼 그 서버가 생겼는데 어딘가에 담아줘야 우리가 쓸 수 있거든요? 그래서 <strong>var server</strong>를 입력하여 <strong>server라는 변수를 만들었고</strong>, 그 <strong>변수에 http.createServer()가 뱉은 서버를 담아줬어요</strong>. (“연결해줬어요.”와 동일한 의미예요.)</p>
-<p>좀 복잡하네요. 쓰고 보니까..</p>
-<p>아직은 이 코드를 가지고 <strong>node server.js</strong>를 입력해도 서버가 켜지지 않아요. 기본적으로 서버는 포트라는 게 필요해요. 포트는 번호예요.</p>
-<p>일반적으로 하나의 ip는 하나의 컴퓨터와 연결돼요. 근데 하나의 컴퓨터는 서버를 여러개 가질 수 있어요.</p>
-<p>일반적인 상식으로 서버는 컴퓨터를 일컫는 말이긴 한데, 그건 너무 일반인의 영역이고, 서버는 사실 그냥 프로그램이에요. 압축 프로그램, 동영상 프로그램, 음악, 사진 뭐 등의 프로그램이 있잖아요. 서버 프로그램도 있는 거예요.</p>
-<p>그래서 이 하나의 컴퓨터 안에는 많은 프로그램이 있는데, 얘네들한테 포트 번호를 줄 수 있어요. 만약 서버에게 80번을 주게 되면 저 서버는 80번 포트로 동작해. 라고 얘기할 수 있죠.</p>
-<p>포트는 0~65535 번까지 존재할 수 있고요. 기본적으로 HTTP의 포트는 80번이에요.</p>
-<p>예를 들어 브라우저에서 <a href="http://naver.com" target="_blank" rel="noopener">http://naver.com</a> 라는 주소로 입력하게 되면 <a href="http://naver.com:80" target="_blank" rel="noopener">http://naver.com:80</a> 에 접근한 것과 같아요.</p>
-<p>여기서 :80 이 부분이 포트거든요. 브라우저는 기본적으로 80 포트를 붙여서 그 서버에 접근해요.</p>
-<p>그러니까 요약하면 naver.com 이라는 도메인 이름으로 ip를 어딘가에서 찾아와요. 그럼 그 ip를 가지고 컴퓨터를 찾은 다음 해당 컴퓨터 내에서 80번이라는 포트를 가진 서버 프로그램을 찾고 요청을 전달해줘요.</p>
-<p>아 씨 잔뜩 썼지만 이해하기 힘들 것 같다는 생각이 드네요. 글을 못 쓰는 걸 어떡해.</p>
-<p>무튼 아래와 같이 코드나 써 봅시다. 시간이 지나면 이해하겠죠.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line"></span><br><span class="line">var server = http.createServer()</span><br><span class="line"></span><br><span class="line">var port = 1337;</span><br><span class="line"></span><br><span class="line">server.listen(port);</span><br></pre></td></tr></table></figure>
-<p>port라는 변수를 만들었고 걔한테 1337이라는 숫자를 줬어요. 그럼 숫자형 변수가 됩니다. 얘를 server라는 애한테 listen하라고 해요. 그니까 server가 가진 함수 중에 listen을 사용해. 그리고 거기에 저 번호를 줘. 와 같은 의미예요.</p>
-<p>80번 줘도 돼요. 다른 번호 줘도 돼요. 상관 없어요. 완전 상관 없는 건 아닌데. 그냥 어지간하면 저 번호로 해주세요.</p>
-<img src="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/server_run.PNG" title="서버를 실행했어요.">
-<p>위의 사진은 코드를 다 적고 F5를 누른 거예요. F5를 누르면 <strong>node server.js</strong>를 한 것과 같다고 했죠? 서버를 실행한 거예요. node로!</p>
-<p>그럼 이제 이 서버 프로그램은 1337의 포트로 수신 대기하는 상태가 된 거예요. 서버가 열린 거죠! 예에!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/24/node-js로-페이스북-챗봇-만들기-4/" data-id="cjf7mt8ed000adouxc5jq0ggq" class="article-share-link">공유</a>
-      
-        <a href="https://ohseunghyeon.github.io/2018/03/24/node-js로-페이스북-챗봇-만들기-4/#disqus_thread" class="article-comment-link">댓글</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-연어장" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/24/연어장/" class="article-date">
-  <time datetime="2018-03-24T07:22:00.000Z" itemprop="datePublished">2018-03-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/일기/">일기</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/24/연어장/">연어장</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/2018/03/24/연어장/salmon.jpg" title="연어장">
-<p>어제 사온 연어장.<br>밥도둑은 좀 오버고..<br>꽤 괜찮다. 와사비도 있고.<br>연어도 꽤 들어 있음.<br>양파, 연어, 와사비, 국물.</p>
-<p>근데 몇 번 먹으면 질릴 것 같당.<br>역시 이런 제품들은 한 두번 먹는 건 좋은데 계속 먹기엔 뭔가 질려.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/24/연어장/" data-id="cjf7mt8dx0006douxcs3qow36" class="article-share-link">공유</a>
-      
-        <a href="https://ohseunghyeon.github.io/2018/03/24/연어장/#disqus_thread" class="article-comment-link">댓글</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GS25/">GS25</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/연어장/">연어장</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js로-페이스북-챗봇-만들기-3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-node-js로-페이스북-챗봇-만들기-3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/" class="article-date">
   <time datetime="2018-03-22T13:13:13.000Z" itemprop="datePublished">2018-03-22</time>
@@ -235,8 +96,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/">node.js로 페이스북 챗봇 만들기 3</a>
+    <h1 class="article-title" itemprop="name">
+      node.js로 페이스북 챗봇 만들기 3
     </h1>
   
 
@@ -318,17 +179,35 @@
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/24/연어장/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">최신</strong>
+      <div class="article-nav-title">
+        
+          연어장
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">이전</strong>
+      <div class="article-nav-title">node.js로 페이스북 챗봇 만들기 2</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">다음 &raquo;</a>
-  </nav>
-
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -429,11 +308,13 @@
 <script>
   var disqus_shortname = 'ohseunghyeon';
   
+  var disqus_url = 'https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
