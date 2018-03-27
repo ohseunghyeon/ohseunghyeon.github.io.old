@@ -113,40 +113,44 @@
 <li>facebook messenger와 서버 연동하기</li>
 <li>AWS lambda에 올리기</li>
 </ol>
-<h1 id="2-개발을-하기-위한-환경-준비"><a href="#2-개발을-하기-위한-환경-준비" class="headerlink" title="2. 개발을 하기 위한 환경 준비"></a>2. 개발을 하기 위한 환경 준비</h1><h2 id="node-js"><a href="#node-js" class="headerlink" title="* node.js"></a>* node.js</h2><p>먼저 node.js를 설치하세요. <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">node.js 공식 홈페이지</a></p>
+<h1 id="2-개발을-하기-위한-환경-준비"><a href="#2-개발을-하기-위한-환경-준비" class="headerlink" title="2. 개발을 하기 위한 환경 준비"></a>2. 개발을 하기 위한 환경 준비</h1><h2 id="node-js"><a href="#node-js" class="headerlink" title="* node.js"></a>* node.js</h2><p>먼저 node.js를 설치합니다. <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">node.js 공식 홈페이지</a></p>
 <img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/node.png" title="node.js 공식 홈페이지">
-<p>버전이 두 개예요.<br>8.10.0 LTS<br>9.8.0 현재버전</p>
-<p>아마 미래에 이 글을 보게될 경우 버전은 당연히 사진과 다릅니다. 아무 버전이나 깔아도 상관 없어요. 정 못 고르시겠으면 동전을 던지고 앞면이 나오면 오른쪽 뒷면이 나오면 왼쪽 버전을 선택하세요.</p>
-<p>설치하는 과정은 간단합니다. 다운로드 받은 파일을 실행하고 다음 다음 다음 다음을 눌러주세요. 끈기를 잃지 않고 다음을 반복해서 누르시면 설치가 완료됩니다.</p>
-<p>단, 이후 설치가 되었는지 확인하는 과정이 반드시 필요합니다. 터미널에서 다음 명령어를 입력하세요.</p>
+<p>버전이 두 개 존재합니다.</p>
+<ul>
+<li>8.10.0 LTS</li>
+<li>9.8.0 현재버전</li>
+</ul>
+<p>버전은 계속 업그레이드되기 때문에 다를 수 있습니다. 어떤 버전이든 상관이 없습니다.</p>
+<p>설치하는 과정은 간단합니다. 다운로드 받은 파일을 실행하고 계속 다음을 눌러주세요.</p>
+<p>설치가 완료된 정상적으로 완료되었는지 확인하는 과정이 반드시 필요합니다. 터미널에서 다음 명령어를 입력하세요.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-<p>사진으로 보여드릴게요.</p>
 <img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/terminal.PNG" title="node.js 버전 확인">
-<p>터미널이 뭔지 모르시는 분에게<br>터미널은 윈도우를 쓰신다면 왼쪽 하단의 윈도우 버튼을 누르신 후 “명령 프롬프트”라고 입력하시면 나오는 애예요. 걔를 실행시키고 “ipconfig”이라고 입력해보세요. 그럼 ip를 알 수 있어요.(windows의 경우)</p>
-<p>명령 프롬프트라고 해도 안 나오면</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">윈도우 버튼 + r</span><br></pre></td></tr></table></figure>
-<p>누르신 다음에</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd</span><br></pre></td></tr></table></figure>
-<p>를 입력하고 확인을 누르세요.<br>참고로 윈도우 버튼은 키보드 좌측 Ctrl 키와 Alt 키 사이에 있어요. (Mac을 쓰신다면 달라요! 물어보지 마세요. 인터넷에 검색해요!)</p>
-<p>글이 불필요하게 길어지고 있네요.</p>
-<p>무튼 node.js를 깔았으면 터미널에서 버전을 확인하는 명령어를 입력하고 제대로 설치가 되었는지 확인하세요. 반드시.</p>
-<h2 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="* Visual Studio Code"></a>* Visual Studio Code</h2><p>“비쥬얼 스튜디오 코드”라고 읽으시면 돼요. 설치하러 가 봐요. <a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code 공식 홈페이지</a></p>
-<p>아 뭔지 설명해야겠구나. 얘는 개발할 때 쓰는 메모장 상위호환 판이에요. 좋은 아이죠. 가벼운 웹 개발을 하시는 분들은 고급 메모장을 많이 사용하시는데요. 생각나는 애들이 <a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a>, <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a> 등이 있어요. 물론 메모장..이 아니라 텍스트 에디터라고 할게요. 텍스트 에디터는 참 많아요. 근데 javascript 개발할 땐 제 생각에 VSCode(Visual Studio Code)가 짱이에요. 그렇다고요. 그러니까 <a href="https://code.visualstudio.com" target="_blank" rel="noopener">VSCode</a>를 깔아요.</p>
-<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/vscode.PNG" title="node.js 버전 확인">
-<p>위에 보시면 Download for Windows가 있어요. 맥 쓰시면 맥 버전용, Linux 쓰시면 해당 버전에 맞는 다운로드 버튼이 나타날 겁니다. 그냥 다운 받으세요. 그리고 깔아요. 설치 과정은 node.js와 동일해요. 그냥 다음을 계속 눌러요.</p>
-<p><a href="http://lovesoda.tistory.com/20" target="_blank" rel="noopener">여기 멋진 분이 쓴 글이 있네요.</a> 설치 과정을 잘 적어두셨어요. 참고해요.</p>
-<p>한 가지 Tip을 드리자면 설치 도중 “Code(으)로 열기”작업을 Windows 탐색기 파일의 상황에 맞는 메뉴에 추가, 디렉터리의 상황에 맞는 메뉴에 추가 항목을 <strong>체크</strong>하세요. 폴더에서 코드 열 때 편해요!</p>
+<ul>
+<li>터미널이 뭔지 모르시는 분에게<br>명령 프롬프트 또는 터미널 또는 커맨드 라인 인터페이스(CLI)라고 부르는 프로그램입니다. 윈도우를 쓰신다면 왼쪽 하단의 윈도우 버튼을 누르신 후 “명령 프롬프트”라고 입력하시면 찾으실 수 있습니다.</li>
+</ul>
+<p>윈도우에서 단축키로 명령 프롬프트를 여는 방법은 다음과 같습니다.</p>
+<ul>
+<li>윈도우 버튼 + r 를 입력, “실행” 프로그램을 띄웁니다.</li>
+<li>실행 프로그램에서 열기: 부분에 <strong>cmd</strong>를 입력하고 확인을 누릅니다.</li>
+</ul>
+<p>참고로 윈도우 키는 일반적으로 키보드 좌측 Ctrl 키와 Alt 키 사이에 있어요.</p>
+<p>맥의 경우엔 Spotlight에서 터미널이라고 입력하시면 찾을 수 있습니다.</p>
+<h2 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="* Visual Studio Code"></a>* Visual Studio Code</h2><p><a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code 공식 홈페이지</a>에서 다운받아 설치하십시오.</p>
+<p>Visual Studio Code(이하, vscode)는 개발할 때 사용하는 텍스트 에디터입니다. 이와 비슷한 프로그램으로 <a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a>, <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a> 등이 있습니다. 필자는 javascript 개발 시 vscode를 사용하기 때문에 이 글에서도 이 프로그램으로 진행할 것입니다.</p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/vscode.PNG" title="vscode 웹사이트">
+<p>위의 Download for Windows 버튼으로 다운로드 받으십시오. 타 OS를 사용하시는 경우 해당 버전에 맞는 다운로드 버튼이 나타납니다.</p>
+<p><a href="http://lovesoda.tistory.com/20" target="_blank" rel="noopener">설치 과정이 필요하시면 이 글을 참고하셔도 좋을 것 같습니다.</a></p>
+<p>한 가지 Tip을 드리자면 설치 도중 “Code(으)로 열기”작업을 Windows 탐색기 파일의 상황에 맞는 메뉴에 추가, 디렉터리의 상황에 맞는 메뉴에 추가 항목을 <strong>체크</strong>하세요.</p>
 <img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/mouseright.PNG" title="Open with Code">
-<p>폴더나 소스 파일 마우스 우클릭 시 중간에 Open with Code라고 생겨요.</p>
-<h2 id="ngrok"><a href="#ngrok" class="headerlink" title="* ngrok"></a>* ngrok</h2><p>얘는 <a href="https://ngrok.com/" target="_blank" rel="noopener">여기</a>서 설치하세요.<br>꼭 가입도 하시고요.</p>
+<p>위의 사진처럼 폴더나 파일을 마우스 우클릭 시 Open with Code가 생깁니다. 파일이나 폴더를 vscode로 열기 수월해집니다.</p>
+<h2 id="ngrok"><a href="#ngrok" class="headerlink" title="* ngrok"></a>* ngrok</h2><p><a href="https://ngrok.com/" target="_blank" rel="noopener">ngrok 홈페이지</a>서 다운로드 받으세요. 가입도 필요합니다.</p>
 <img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/ngrok.PNG" title="ngrok">
-<p>다운 받으시면 실행 파일이 하나 있어요. 윈도우를 사용하신다면 더블 클릭해서 실행하지 마세요. 어차피 안 돼요. 커맨드 라인(명령 프롬프트, 터미널)에서 실행하는 애예요. 얘가 필요한 이유는 이따가 차근 차근 설명할게요.</p>
-<p>짧게 설명해드리자면 https 프로토콜을 사용하기 위함이에요. https가 뭐냐고요?</p>
+<p>다운 받으시면 아시겠지만 ngrok라는 프로그램은 단일 실행파일로 이루어져 있습니다. 이 프로그램은 더블클릭으로 실행할 수 있는 프로그램이 아니며, 터미널을 통해 명령어로 동작하게 됩니다.<br>이 프로그램은 사용자의 서버를 https 서버로 만들어줄 수 있습니다.</p>
+<p>https 서버란</p>
 <blockquote><p>HTTPS(Hypertext Transfer Protocol over Secure Socket Layer, HTTP over TLS, HTTP over SSL, HTTP Secure)는 월드 와이드 웹 통신 프로토콜인 HTTP의 보안이 강화된 버전이다.</p>
 <footer><strong>[위키백과] [https://ko.wikipedia.org/wiki/HTTPS] [HTTPS]</strong></footer></blockquote>
-<p>그렇다네요.</p>
-<p>그렇답니다. 다음으로 넘어갑시다. 갈 길이 머네요..</p>
-<h2 id="3줄-정리"><a href="#3줄-정리" class="headerlink" title="3줄 정리"></a>3줄 정리</h2><p>node.js는 서버가 되어줄 애예요.<br>visual studio code는 편집기고요<br>ngrok는 https를 쓸 수 있게 해줄 아이예요.</p>
+<p>기본적으로 https 서버를 구동하기 위해서는 도메인과 인증서가 필요합니다. 그러나 위 프로그램을 사용할 경우 이 둘을 단순하게 해결해줍니다. 그 방법은 차후 설명하겠습니다.</p>
+<p><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">node.js로 기본적인 서버 만들기로 이동</a></p>
 
       
     </div>

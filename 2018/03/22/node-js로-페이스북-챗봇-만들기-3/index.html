@@ -7,13 +7,13 @@
   
   <title>node.js로 페이스북 챗봇 만들기 3 | title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world이 글의 독자는 서버가 뭔지">
+  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world서버를 만들기 이전에 기본적">
 <meta name="keywords" content="aws lambda,node.js,챗봇,chatbot,facebook messenger">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js로 페이스북 챗봇 만들기 3">
 <meta property="og:url" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world이 글의 독자는 서버가 뭔지">
+<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world서버를 만들기 이전에 기본적">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/open_with_code.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/new_file.PNG">
@@ -22,10 +22,10 @@
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/cmd_hello.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/f5.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/console_has.PNG">
-<meta property="og:updated_time" content="2018-03-26T02:47:05.051Z">
+<meta property="og:updated_time" content="2018-03-27T00:23:33.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js로 페이스북 챗봇 만들기 3">
-<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world이 글의 독자는 서버가 뭔지">
+<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world서버를 만들기 이전에 기본적">
 <meta name="twitter:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/open_with_code.PNG">
   
     <link rel="alternate" href="/atom.xml" title="title" type="application/atom+xml">
@@ -121,38 +121,39 @@
 <li>facebook messenger와 서버 연동하기</li>
 <li>AWS lambda에 올리기</li>
 </ol>
-<h1 id="3-node-js로-기본적인-서버-만들기"><a href="#3-node-js로-기본적인-서버-만들기" class="headerlink" title="3. node.js로 기본적인 서버 만들기"></a>3. node.js로 기본적인 서버 만들기</h1><h2 id="hello-world"><a href="#hello-world" class="headerlink" title="* hello world"></a>* hello world</h2><p>이 글의 독자는 서버가 뭔지 개념이 모른다는 가정이 있어요. 당신은 알아도 모른 척 하거나 웃고 넘기거나 이 부분을 건너 뛰세요. 하지만 읽어도 상관 없어요. 내 시간 아니니까. 무튼, 갑니다.</p>
-<p>서버를 일단 만들어 볼 거예요. 그 다음 이게 어떤 방식으로 동작하는 건지 이해를 돕기 위한 설명을 조금 적어볼게요.</p>
-<p>먼저 파일을 하나 만들어야 해요. 자바 스크립트 파일인데요 확장자가 js가 될 거예요. 이름은 server로 해요. 그럼 server.js가 될 거예요. 아실지 모르겠지만 c언어로 된 파일은 abc.c 파이썬은 abc.py 뭐 이런 식으로 지어요. 자바스크립트라서 js입니다. 솔직히 확장자에 큰 의미가 있는 건 아니예요. 식별표 같은 거죠. 실제로 실행시킬 때는 확장자를 뭘로 하든 상관 없어요.</p>
-<p>일단 파일을 만들어 봅니다.</p>
+<h1 id="3-node-js로-기본적인-서버-만들기"><a href="#3-node-js로-기본적인-서버-만들기" class="headerlink" title="3. node.js로 기본적인 서버 만들기"></a>3. node.js로 기본적인 서버 만들기</h1><h2 id="hello-world"><a href="#hello-world" class="headerlink" title="* hello world"></a>* hello world</h2><p>서버를 만들기 이전에 기본적인 사용 방법을 알아보겠습니다.</p>
+<p>먼저 파일을 하나 만들겠습니다.</p>
+<ul>
+<li>server.js 생성</li>
+</ul>
+<p>터미널에서 다음과 같이 입력하셔도 됩니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch server.js</span><br></pre></td></tr></table></figure>
-<p>touch는 파일 만들어 주는 애예요.<br>터미널에서 쓰면 해당 경로에 그 파일을 만들어 줍니다. 굳이 저렇게 만들 필요는 없어요. 대충 폴더 이름을 dev나 chatbot 정도로 해서 만들어요. 그리고 거기서 visual studio code를 실행시키세요.</p>
+<p>touch는 빈 파일을 만드는 명령어입니다.</p>
+<p>저는 dev라는 폴더를 생성하여 그 안에 만들겠습니다.</p>
 <img src="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/open_with_code.PNG" title="Open with Code">
-<p>저기서 Open with Code 누르세요. 저게 없으면 터미널에서</p>
+<p>저기서 Open with Code 누르십시오.</p>
+<p>또는 터미널을 실행한 후 해당하는 경로에서 다음과 같이 입력하세요.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code .</span><br></pre></td></tr></table></figure>
-<p>요로케 입력하면 해당 경로에서 vscode를 열어줄 거예요.</p>
+<p>그럼 vscode가 실행됩니다. vscode에서도 새로운 파일을 만들 수 있습니다.</p>
 <img src="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/new_file.PNG" title="make a new file">
-<p>저기 대충 마우스 오른쪽으로 눌러요. 그럼 새 파일 있죠? 그걸로 새 파일 만들고 이름 server.js 쯤으로 해요. 아무거나 해도 상관 없어요.</p>
 <img src="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/just_made.PNG" title="just made a file">
-<p>자 이제 코딩을 시작하면 되겠다요.</p>
-<p>먼저 Hello World를 찍어봅시다. 왜냐면 모두가 하니까요. 그리고 반드시 해야하니까요. 이유는 나도 몰라.</p>
+<p>파일을 생성하였습니다.</p>
+<p>먼저 Hello World를 찍어봅시다.</p>
+<p>아래와 같이 입력해주세요.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;Hello World&apos;);</span><br></pre></td></tr></table></figure>
-<p>요걸 입력하세요. 사진으로도 보여줄게요. 처음이니까 천천히 갑시다.</p>
 <img src="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/hello_world.PNG" title="Hello World">
-<p>짜잔. 그리고 이 파일을 이제 node.js로 실행시킬 수 있어요. 좀 어렵긴 한데.. 이거만 하면 앞으론 어렵지 않을 거예요.</p>
-<p>일단 명령어는 다음과 같아요.</p>
+<p>이제 이 파일을 node.js로 실행할 수 있습니다.</p>
+<p>실행하기 위한 명령어는 다음과 같습니다. 터미널에서 입력하면 됩니다. 반드시 해당 파일이 있는 경로에서 실행하셔야 합니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
-<p>커맨드 라인을 열어요. 그리고 저 경로로 가요. 그리고 위의 커맨드를 입력해요. 그리고 엔터를 쳐요.<br>저 같은 경우 “D:\dev\” 라는 경로에 server.js 파일이 있어요.</p>
+<p>저 같은 경우에는 “D:\dev\” 라는 경로에 server.js 파일이 있습니다.</p>
 <img src="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/cmd_hello.PNG" title="cmd hello world">
-<p>지난 글에 설명했지만 명령 프롬프트를 여는 방법은 간단해요. </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Windows key + r</span><br><span class="line">실행이 뜬댜.</span><br><span class="line">cmd 입력하고 확인</span><br></pre></td></tr></table></figure>
-<p>혹시 경로를 이동할 줄 몰라요?<br>일단 C에 있는데 D 이런 데 가고 싶으면 d: 이렇게 치고 엔터 치시구요<br>폴더 위 아래로 왔다 갔다 하는 건</p>
+<p>혹시 경로를 이동할 줄 모르신다면<br>파티션 단위로 이동하기 위해서는 (C나 D 드라이브로 이동) <strong>c:</strong> 혹은 <strong>d:</strong> 를 입력하세요.<br>폴더 상 하위로 이동하기 위해서는 <strong>cd</strong> 명령어를 사용합니다.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd &quot;폴더명&quot; </span><br></pre></td></tr></table></figure>
-<p>하시면 폴더에 들어가고</p>
+<p>위의 명령어로 폴더로 들어가고</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd .. </span><br></pre></td></tr></table></figure>
-<p>하시면 상위 폴더로 나가요.<br>대충 이 조합으로 찾아가봐요.<br>저 같은 경우엔</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d: 엔터</span><br><span class="line">cd dev</span><br><span class="line">node server.js</span><br></pre></td></tr></table></figure>
-<p>하면 끝났어요.</p>
+<p>하시면 상위 폴더로 이동합니다.</p>
+<p>저 같은 경우엔 아래와 같이 입력했습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d:</span><br><span class="line">cd dev</span><br><span class="line">node server.js</span><br></pre></td></tr></table></figure>
 <p>hello world 화면에 떴어요? 휴…짱 어렵네.<br>근데 저렇게 터미널(명령 프롬프트)에서 실행하는 방법도 있지만 Visual Studio Code에서 바로 실행할 수도 있어요.</p>
 <p>앞서 console.log(‘hello world’); 를 입력한 화면 있잖아요? Visual Studio Code 화면에서 F5를 누르세요. 그럼 자동으로 소스가 node.js로 한 번 실행돼요.</p>
 <img src="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/f5.PNG" title="vscode에서 코드 실행하기">
@@ -164,7 +165,6 @@
 <img src="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/console_has.PNG" title="console이 가진 도구들">
 <p>그렇게 ‘hello world’라는 문장을 저 친구에게 넘겨주고 저 친구는 화면에 뿌려줘요.</p>
 <p><strong>;</strong> &lt;==== 얘는 문장이 끝났다는 뜻이에요. 안 적어도 무방해요.</p>
-<p>끗</p>
 
       
     </div>
