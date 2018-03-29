@@ -7,13 +7,13 @@
   
   <title>node.js로 페이스북 챗봇 만들기 3 | title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world서버를 만들기 이전에 기본적">
+  <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world HTTP 서버 만들기 HTTP 서버 요청 핸들링   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world">
 <meta name="keywords" content="aws lambda,node.js,챗봇,chatbot,facebook messenger">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js로 페이스북 챗봇 만들기 3">
 <meta property="og:url" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/index.html">
 <meta property="og:site_name" content="title">
-<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world서버를 만들기 이전에 기본적">
+<meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world HTTP 서버 만들기 HTTP 서버 요청 핸들링   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/open_with_code.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/new_file.PNG">
@@ -22,10 +22,10 @@
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/cmd_hello.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/f5.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/console_has.PNG">
-<meta property="og:updated_time" content="2018-03-29T00:54:17.180Z">
+<meta property="og:updated_time" content="2018-03-29T02:23:26.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js로 페이스북 챗봇 만들기 3">
-<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world http 서버 만들기   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world서버를 만들기 이전에 기본적">
+<meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world HTTP 서버 만들기 HTTP 서버 요청 핸들링   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* hello world">
 <meta name="twitter:image" content="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/open_with_code.PNG">
   
     <link rel="alternate" href="/atom.xml" title="title" type="application/atom+xml">
@@ -115,7 +115,8 @@
 </li>
 <li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">node.js로 기본적인 서버 만들기</a><ul>
 <li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">hello world</a></li>
-<li><a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4">http 서버 만들기</a></li>
+<li><a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4">HTTP 서버 만들기</a></li>
+<li><a href="/2018/03/29/node-js로-페이스북-챗봇-만들기-5">HTTP 서버 요청 핸들링</a></li>
 </ul>
 </li>
 <li>facebook messenger와 서버 연동하기</li>
@@ -169,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/" data-id="cjfbt7f60000anguxeawpfttf" class="article-share-link">공유</a>
+      <a data-url="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/" data-id="cjfbu27mf000540uxcdkromhy" class="article-share-link">공유</a>
       
         <a href="https://ohseunghyeon.github.io/2018/03/22/node-js로-페이스북-챗봇-만들기-3/#disqus_thread" class="article-comment-link">댓글</a>
       
@@ -258,6 +259,10 @@
       <ul>
         
           <li>
+            <a href="/2018/03/29/node-js로-페이스북-챗봇-만들기-5/">node.js로 페이스북 챗봇 만들기 5</a>
+          </li>
+        
+          <li>
             <a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/">node.js로 페이스북 챗봇 만들기 4</a>
           </li>
         
@@ -271,10 +276,6 @@
         
           <li>
             <a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">node.js로 페이스북 챗봇 만들기 2</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/21/눈이-왔다/">눈이 왔다.</a>
           </li>
         
       </ul>
