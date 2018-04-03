@@ -5,25 +5,27 @@
   
 
   
-  <title>node.js로 페이스북 챗봇 만들기 5 | title</title>
+  <title>node.js로 페이스북 챗봇 만들기 5 | 구구구구구구구</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world HTTP 서버 만들기 HTTP 서버 요청 핸들링   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* HTTP 서버 요청">
 <meta name="keywords" content="aws lambda,node.js,챗봇,chatbot,facebook messenger">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js로 페이스북 챗봇 만들기 5">
 <meta property="og:url" content="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/index.html">
-<meta property="og:site_name" content="title">
+<meta property="og:site_name" content="구구구구구구구">
 <meta property="og:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world HTTP 서버 만들기 HTTP 서버 요청 핸들링   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* HTTP 서버 요청">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/server_run.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/1337.PNG">
-<meta property="og:updated_time" content="2018-03-29T02:23:14.128Z">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/postman.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/curl.PNG">
+<meta property="og:updated_time" content="2018-04-03T05:09:53.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js로 페이스북 챗봇 만들기 5">
 <meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world HTTP 서버 만들기 HTTP 서버 요청 핸들링   facebook messenger와 서버 연동하기 AWS lambda에 올리기  3. node.js로 기본적인 서버 만들기* HTTP 서버 요청">
 <meta name="twitter:image" content="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/server_run.PNG">
   
-    <link rel="alternate" href="/atom.xml" title="title" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="구구구구구구구" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -42,11 +44,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">title</a>
+        <a href="/" id="logo">구구구구구구구</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">subtitle</a>
+          <a href="/" id="subtitle">비둘기를 올린다.</a>
         </h2>
       
     </div>
@@ -114,7 +116,7 @@
 <li><a href="/2018/03/29/node-js로-페이스북-챗봇-만들기-5">HTTP 서버 요청 핸들링</a></li>
 </ul>
 </li>
-<li>facebook messenger와 서버 연동하기</li>
+<li><a href="/2018/04/01/node-js로-페이스북-챗봇-만들기-6">facebook messenger와 서버 연동하기</a></li>
 <li>AWS lambda에 올리기</li>
 </ol>
 <h1 id="3-node-js로-기본적인-서버-만들기"><a href="#3-node-js로-기본적인-서버-만들기" class="headerlink" title="3. node.js로 기본적인 서버 만들기"></a>3. node.js로 기본적인 서버 만들기</h1><h2 id="HTTP-서버-요청-핸들링"><a href="#HTTP-서버-요청-핸들링" class="headerlink" title="* HTTP 서버 요청 핸들링"></a>* HTTP 서버 요청 핸들링</h2><p>앞서 HTTP 서버를 만들었어요.</p>
@@ -141,16 +143,23 @@
 <p>이처럼 바로 저 자리에서 선언해서 넣어줘도 됩니다.</p>
 <p>이렇게 requestHandler를 넘겨주게 되면 createServer 함수가 requestHandler라는 함수를 내부에 보관하고 있다가<br>request가 들어올 때 requestHandler 함수를 실행합니다. request 인자와 response 인자도 함께요.</p>
 <p>이제 실행해보세요. press F5<br><img src="/2018/03/29/node-js로-페이스북-챗봇-만들기-5/server_run.PNG" title="서버 다시 실행"></p>
-<p>이제 이 서버를 실험해볼 수 있습니다.</p>
-<p>브라우저로 가셔서 아래 주소를 입력하세요</p>
+<p>이제 이 서버를 시도해 볼 수 있습니다.</p>
+<p>웹 브라우저를 여시고 아래 주소를 입력하세요</p>
 <p><strong><a href="http://localhost:1337" target="_blank" rel="noopener">http://localhost:1337</a></strong></p>
 <img src="/2018/03/29/node-js로-페이스북-챗봇-만들기-5/1337.PNG" title="localhost hello world">
 <p>서버가 hello world라는 텍스트를 응답으로 줬네요. 예에!</p>
+<p>브라우저에서 <a href="http://localhost:1337라는" target="_blank" rel="noopener">http://localhost:1337라는</a> url로 접근하여 hello world라는 text를 얻어왔습니다.</p>
+<p>브라우저의 주소창에 주소를 입력하여 접속을 시도하는 행위는 HTTP 요청을 날리는 것입니다. 즉 해당 주소(그 끝엔 서버가 있겠죠)로 가서 걔가 주는 걸 받아오는 것인데요. 이렇게 브라우저가 아니라도 다른 HTTP 클라이언트를 사용하여 동일한 결과를 얻을 수 있습니다.</p>
+<p>Postman이라는 클라이언트 프로그램에서 같은 요청과 응답을 볼 수 있습니다.</p>
+<img src="/2018/03/29/node-js로-페이스북-챗봇-만들기-5/postman.PNG" title="postman HTTP request http://localhost:1337">
+<p>다음은 또 다른 친구인 curl을 사용하여 HTTP 요청과 응답을 가져오는 모습입니다.</p>
+<img src="/2018/03/29/node-js로-페이스북-챗봇-만들기-5/curl.PNG" title="curl HTTP request http://localhost:1337">
+<p>이렇듯 HTTP를 기반으로 클라이언트가 될 수 있는 프로그램은 많습니다. node.js가 아닌 서버를 만들 수 있는 다른 프로그래밍 언어에서도 이는 쉽게 구현 가능합니다. 그러나 node.js에서 HTTP request를 하는 법은 당장은 귀찮기 때문에 넘어가겠습니다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/" data-id="cjfbu27ms000740uxrl3eanzh" class="article-share-link">공유</a>
+      <a data-url="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/" data-id="cjfj7jgxc000dscuxx364eyso" class="article-share-link">공유</a>
       
         <a href="https://ohseunghyeon.github.io/2018/03/29/node-js로-페이스북-챗봇-만들기-5/#disqus_thread" class="article-comment-link">댓글</a>
       
@@ -162,6 +171,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/03/31/이상한-꿈/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">최신</strong>
+      <div class="article-nav-title">
+        
+          이상한 꿈
+        
+      </div>
+    </a>
   
   
     <a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/" id="article-nav-older" class="article-nav-link-wrap">
@@ -198,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS25/">GS25</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/단지우유/">단지우유</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/빙그레/">빙그레</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연어장/">연어장</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오디맛/">오디맛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS25/">GS25</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/단지우유/">단지우유</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비둘기/">비둘기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/빙그레/">빙그레</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연어장/">연어장</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오디맛/">오디맛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
     </div>
   </div>
 
@@ -208,7 +226,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그 클라우드</h3>
     <div class="widget tagcloud">
-      <a href="/tags/GS25/" style="font-size: 10px;">GS25</a> <a href="/tags/aws-lambda/" style="font-size: 20px;">aws lambda</a> <a href="/tags/chatbot/" style="font-size: 20px;">chatbot</a> <a href="/tags/facebook-messenger/" style="font-size: 20px;">facebook messenger</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/단지우유/" style="font-size: 10px;">단지우유</a> <a href="/tags/빙그레/" style="font-size: 10px;">빙그레</a> <a href="/tags/연어장/" style="font-size: 10px;">연어장</a> <a href="/tags/오디맛/" style="font-size: 10px;">오디맛</a> <a href="/tags/챗봇/" style="font-size: 20px;">챗봇</a>
+      <a href="/tags/GS25/" style="font-size: 10px;">GS25</a> <a href="/tags/aws-lambda/" style="font-size: 20px;">aws lambda</a> <a href="/tags/chatbot/" style="font-size: 20px;">chatbot</a> <a href="/tags/facebook-messenger/" style="font-size: 20px;">facebook messenger</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/단지우유/" style="font-size: 10px;">단지우유</a> <a href="/tags/비둘기/" style="font-size: 15px;">비둘기</a> <a href="/tags/빙그레/" style="font-size: 10px;">빙그레</a> <a href="/tags/연어장/" style="font-size: 10px;">연어장</a> <a href="/tags/오디맛/" style="font-size: 10px;">오디맛</a> <a href="/tags/챗봇/" style="font-size: 20px;">챗봇</a>
     </div>
   </div>
 
@@ -217,7 +235,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">아카이브</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a></li></ul>
     </div>
   </div>
 
@@ -230,23 +248,23 @@
       <ul>
         
           <li>
+            <a href="/2018/04/03/구구구구/">구구구구</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/01/node-js로-페이스북-챗봇-만들기-6/">node.js로 페이스북 챗봇 만들기 6</a>
+          </li>
+        
+          <li>
+            <a href="/2018/03/31/이상한-꿈/">이상한 꿈</a>
+          </li>
+        
+          <li>
             <a href="/2018/03/29/node-js로-페이스북-챗봇-만들기-5/">node.js로 페이스북 챗봇 만들기 5</a>
           </li>
         
           <li>
             <a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/">node.js로 페이스북 챗봇 만들기 4</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/24/연어장/">연어장</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3/">node.js로 페이스북 챗봇 만들기 3</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">node.js로 페이스북 챗봇 만들기 2</a>
           </li>
         
       </ul>
