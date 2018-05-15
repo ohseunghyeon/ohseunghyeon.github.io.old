@@ -3,6 +3,19 @@
 <head>
   <meta charset="utf-8">
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-79205503-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   
   <title>node.js로 페이스북 챗봇 만들기 6 | 구구구구구구구</title>
@@ -21,7 +34,10 @@
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/app_dashboard.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/messenger_setting.PNG">
 <meta property="og:image" content="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/webhook.PNG">
-<meta property="og:updated_time" content="2018-04-03T05:09:54.000Z">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/ngrok_on_cmd.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/ngrok_http.PNG">
+<meta property="og:image" content="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/after_inserted_callbackURL.PNG">
+<meta property="og:updated_time" content="2018-05-03T06:29:20.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js로 페이스북 챗봇 만들기 6">
 <meta name="twitter:description" content="목차 서문 개발을 하기 위한 환경 준비 node.js Visual Studio Code ngrok   node.js로 기본적인 서버 만들기 hello world HTTP 서버 만들기 HTTP 서버 요청 핸들링   facebook messenger와 서버 연동하기 AWS lambda에 올리기  4. facebook messenger와 서버 연동하기페이스북 메">
@@ -76,6 +92,7 @@
       </div>
     </div>
   </div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </header>
       <div class="outer">
         <section id="main"><article id="post-node-js로-페이스북-챗봇-만들기-6" class="article article-type-post" itemscope itemprop="blogPost">
@@ -143,11 +160,50 @@
 <p>콜백 URL이라고 되어 있네요. 여기 당신의 서버 주소를 적어주시면 됩니다. 그런데 http가 아니라 https 서버여야 합니다. https 서버를 만드는 법은 쉽습니다. 앞서서 http 서버를 만드셨죠. require할 때 https를 require 하시고 createServer 함수를 실행하면 https 서버가 완성됩니다. 근데 거기에 더해서 도메인(naver.com, daum.net 같은 거)과 https를 위한 인증서가 필요합니다.</p>
 <p>뭘까요? 사실 HTTPS 서버는 만들기 어렵습니다.. 쉽지 않아요. 그렇다고 여기서 HTTPS 서버 만들기를 할 수는 없어요. 그렇게 되면 글의 핀트가 너무도 어긋나게 됩니다. 그래서 필요한 게 앞서 다운받은 <a href="https://ngrok.com/" target="_blank" rel="noopener">ngrok</a>입니다. 얘 홈피에서 가입 하시고 다운로드 받으셔야 해요.</p>
 <p>얘는 https 서버를 쉽게 생성할 수 있도록 도와줍니다. 시도해봅시다.</p>
+<p>cmd를 열어 <em>ngork.exe</em>가 있는 곳으로 가줍니다. 그리고 다음과 같이 입력하세요.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ngrok.exe http 1337</span><br></pre></td></tr></table></figure>
+<img src="/2018/04/01/node-js로-페이스북-챗봇-만들기-6/ngrok_on_cmd.PNG" title="ngrok 실행 명령어">
+<p>다음은 실행 후 화면입니다.</p>
+<img src="/2018/04/01/node-js로-페이스북-챗봇-만들기-6/ngrok_http.PNG" title="ngrok 실행 후">
+<p>위에 노랗게 칠해진 부분이 보이세요?</p>
+<p><em><a href="https://f1ade660.ngrok.io" target="_blank" rel="noopener">https://f1ade660.ngrok.io</a></em> 라는 주소가 보입니다. 이 주소로 접속하면 localhost(사용자 컴퓨터)의 1337 포트로 포워딩을 해줍니다. 즉 위의 webhooks 콜백 URL에 이 주소를 입력하면 https 서버를 따로 구축할 필요 없이 개발을 할 수 있게 됩니다.</p>
+<p>그럼 다음과 같이 넣으면 됩니다.</p>
+<img src="/2018/04/01/node-js로-페이스북-챗봇-만들기-6/after_inserted_callbackURL.PNG" title="callback url을 입력한 후">
+<p>그럼 이제 확인 토큰 부분을 넣어야겠네요. 확인 토큰을 설명하기 위해서는 페이스북 메신저에 붙일 webhook 서버가 어떤 방식으로 동작해야 하는지 먼저 설명해야 합니다.</p>
+<p>webhook 서버는 두 가지 기능을 가지고 있어야 합니다.</p>
+<ol>
+<li><strong>인증</strong></li>
+<li><strong>메시지 반환</strong></li>
+</ol>
+<p>인증은 이 웹훅 서버가 페이스북 메신저와 통신할 수 있는 상태인지 확인하는 절차입니다.</p>
+<p>즉 위에서 <em>확인 토큰</em>에 특정 값을 입력하면 이 토큰 값이 Webhook 서버로 옵니다. 그럼 webhook 서버에서 이를 확인하고 옳바른 값을 반환하면 webhook 설정을 완료할 수 있게 됩니다.</p>
+<p>두 번째로 메시지 반환은 앞서 설명한 대로 메신저에서 유저가 입력한 값이 오면 이에 알맞은 답변을 반환하는 겁니다.</p>
+<p>이 두 요청은 같은 주소로 오게 됩니다. 즉 <a href="https://f1ade660.ngrok.io라는" target="_blank" rel="noopener">https://f1ade660.ngrok.io라는</a> 주소로 오게 되는데요. 이 때, 1. 인증의 경우는 GET이라는 Method를, 2. 메시지 관련 요청은 POST라는 Method로 HTTP 요청이 옵니다.</p>
+<p>뜬금 없지만 먼저 HTTP가 어떤 내용으로 오고 가는지 봐야겠습니다.<br>다음은 <a href="https://ko.wikipedia.org/wiki/HTTP" target="_blank" rel="noopener">위키피디아 HTTP 페이지</a>에 나와 있는 HTTP 클라이언트 요청과 서버 응답의 예시입니다.</p>
+<p>클라이언트 요청<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">GET /index.html HTTP/1.1</span><br><span class="line">Host: www.example.com</span><br><span class="line"></span><br><span class="line">Every interaction is both precious and an opportunity to delight.</span><br></pre></td></tr></table></figure></p>
+<p>HTTP 메시지는 크게 네 부분으로 나뉩니다. 위의 line number로 설명하겠습니다.</p>
+<ol>
+<li>요청줄</li>
+<li>헤더</li>
+<li>공백</li>
+<li>기타 메시지</li>
+</ol>
+<p>Method(요청 방식)란 HTTP 라는 프로토콜을 보낼 때 해당 메시지가 갖고 있는 동작에 대한 규약입니다. Method는 OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT, PATCH 가 있습니다. 이는 첫 번째 라인인 <strong>요청줄</strong>의 가장 앞 부분에 나옵니다.</p>
+<p>페이스북 메신저가 webhook 서버로 보내는 요청 Method는 GET과 POST 둘로 한정됩니다. 앞서 서술한 것처럼 GET은 서버가 살아 있는지, 인증 토큰은 동일한지 확인하기 위해 사용되며 POST는 사용자가 챗봇에 입력한 메시지를 보내주기 위해 사용합니다.</p>
+<p>이런 method는 특정 역할이 뚜렷하게 정해진 것은 아닙니다. GET은 <strong>4. 기타 메시지</strong>를 포함할 수 없고 POST는 포함할 수 있습니다. 그래서 페이스북 메신저는 <strong>4. 기타 메시지</strong>에 사용자가 입력한 메시지를 포함하여 보내기 위해 POST를 <em>메시지 보내기</em> 용도로 사용하고 GET을 인증으로 사용하는 것으로 생각됩니다.</p>
+<p>GET method는 크롬이나 기타 브라우저의 주소창에 주소를 치고 엔터를 칠 때 사용되는 method입니다. 즉 가장 많이 사용되는 method입니다. 그저 해당 서버에 특정 path에 해당하는 정보를 받아오기 위해 사용합니다.</p>
+<p>위의 <strong>1. 요청줄</strong> 에서, path는 method의 바로 다음에 있는 <strong>/index.html</strong> 입니다. 이 주소는 <strong><a href="http://www.example.com/index.html" target="_blank" rel="noopener">www.example.com/index.html</a></strong>과 같이 절대 경로가 되어도 됩니다. 만약 네이버 페이지에 접속한다고 하면 HTTP 메시지는 다음과 같습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET http://www.naver.com HTTP/1.1</span><br><span class="line"></span><br><span class="line">또는</span><br><span class="line"></span><br><span class="line">GET / HTTP/1.1</span><br><span class="line">Host: www.naver.com</span><br></pre></td></tr></table></figure>
+<p><em>Host: <a href="http://www.naver.com" target="_blank" rel="noopener">www.naver.com</a></em> 는 <strong>2. 헤더</strong>에 해당하는 부분입니다. 헤더는 다양한 내용을 포함합니다. 유저가 사용하는 클라이언트의 종류, 언어, 기타 메시지에 포함된 내용의 형식 등이 그 예입니다.</p>
+<p>아래는 클라이언트 요청에 대한 서버의 응답입니다.</p>
+<p>서버 응답<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Mon, 23 May 2005 22:38:34 GMT</span><br><span class="line">Content-Type: text/html; charset=UTF-8</span><br><span class="line">Content-Encoding: UTF-8</span><br><span class="line">Content-Length: 138</span><br><span class="line">Last-Modified: Wed, 08 Jan 2003 23:11:55 GMT</span><br><span class="line">Server: Apache/1.3.3.7 (Unix) (Red-Hat/Linux)</span><br><span class="line">ETag: &quot;3f80f-1b6-3e1cb03b&quot;</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Connection: close</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">    &lt;title&gt;An Example Page&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    Hello World, this is a very simple HTML document.</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>그럼 HTTP에 대한 개념을 조금 알아봤으니 이를 node.js 서버에서 구현해야겠지요.</p>
+<p><a href="/2018/04/22/node-js로-페이스북-챗봇-만들기-7">node.js로 페이스북 챗봇 만들기 7</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/" data-id="cjfj7jgy0000jscux24b499bi" class="article-share-link">공유</a>
+      <a data-url="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/" data-id="cjh70iogp00067kvfk3hhl3uu" class="article-share-link">공유</a>
       
         <a href="https://ohseunghyeon.github.io/2018/04/01/node-js로-페이스북-챗봇-만들기-6/#disqus_thread" class="article-comment-link">댓글</a>
       
@@ -194,7 +250,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">카테고리</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/chatbot/">chatbot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/일기/">일기</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/chatbot/">chatbot</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/일기/">일기</a><span class="category-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -204,7 +260,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS25/">GS25</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/단지우유/">단지우유</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비둘기/">비둘기</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/빙그레/">빙그레</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연어장/">연어장</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오디맛/">오디맛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS25/">GS25</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-lambda/">aws lambda</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot/">chatbot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/단지우유/">단지우유</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비둘기/">비둘기</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/빙그레/">빙그레</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연어장/">연어장</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오디맛/">오디맛</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/챗봇/">챗봇</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -223,7 +279,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">아카이브</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -236,23 +292,23 @@
       <ul>
         
           <li>
+            <a href="/2018/05/15/역동적인-모닝-비둘기/">역동적인 모닝 비둘기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/마로니에공원-비둘기/">마로니에공원 비둘기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/22/node-js로-페이스북-챗봇-만들기-7/">node.js로 페이스북 챗봇 만들기 7</a>
+          </li>
+        
+          <li>
+            <a href="/2018/04/05/일이-매일-쌓여만-간다/">일이 매일 쌓여만 간다.</a>
+          </li>
+        
+          <li>
             <a href="/2018/04/03/구구구구/">구구구구</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/01/node-js로-페이스북-챗봇-만들기-6/">node.js로 페이스북 챗봇 만들기 6</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/31/이상한-꿈/">이상한 꿈</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/29/node-js로-페이스북-챗봇-만들기-5/">node.js로 페이스북 챗봇 만들기 5</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4/">node.js로 페이스북 챗봇 만들기 4</a>
           </li>
         
       </ul>
@@ -267,6 +323,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
+      Total visitor <span id="busuanzi_value_site_uv"></span><br>
       &copy; 2018 SeungHyeon Oh<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
