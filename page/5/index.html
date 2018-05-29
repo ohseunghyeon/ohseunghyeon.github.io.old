@@ -85,6 +85,105 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-node-js로-페이스북-챗봇-만들기-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/" class="article-date">
+  <time datetime="2018-03-21T12:09:47.000Z" itemprop="datePublished">2018-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/chatbot/">chatbot</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">node.js로 페이스북 챗봇 만들기 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ol>
+<li><a href="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/">서문</a></li>
+<li><a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">개발을 하기 위한 환경 준비</a><ul>
+<li>node.js</li>
+<li>Visual Studio Code</li>
+<li>ngrok</li>
+</ul>
+</li>
+<li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">node.js로 기본적인 서버 만들기</a><ul>
+<li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">hello world</a></li>
+<li><a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4">HTTP 서버 만들기</a></li>
+<li><a href="/2018/03/29/node-js로-페이스북-챗봇-만들기-5">HTTP 서버 요청 핸들링</a></li>
+</ul>
+</li>
+<li><a href="/2018/04/01/node-js로-페이스북-챗봇-만들기-6">facebook messenger와 서버 연동하기</a></li>
+<li>AWS lambda에 올리기</li>
+</ol>
+<h1 id="2-개발을-하기-위한-환경-준비"><a href="#2-개발을-하기-위한-환경-준비" class="headerlink" title="2. 개발을 하기 위한 환경 준비"></a>2. 개발을 하기 위한 환경 준비</h1><h2 id="node-js"><a href="#node-js" class="headerlink" title="* node.js"></a>* node.js</h2><p>먼저 node.js를 설치합니다. <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">node.js 공식 홈페이지</a></p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/node.png" title="node.js 공식 홈페이지">
+<p>버전이 두 개 존재합니다.</p>
+<ul>
+<li>8.10.0 LTS</li>
+<li>9.8.0 현재버전</li>
+</ul>
+<p>버전은 계속 업그레이드되기 때문에 다를 수 있습니다. 어떤 버전이든 상관이 없습니다.</p>
+<p>설치하는 과정은 간단합니다. 다운로드 받은 파일을 실행하고 계속 다음을 눌러주세요.</p>
+<p>설치가 완료된 정상적으로 완료되었는지 확인하는 과정이 반드시 필요합니다. 터미널에서 다음 명령어를 입력하세요.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/terminal.PNG" title="node.js 버전 확인">
+<ul>
+<li>터미널이 뭔지 모르시는 분에게<br>명령 프롬프트 또는 터미널 또는 커맨드 라인 인터페이스(CLI)라고 부르는 프로그램입니다. 윈도우를 쓰신다면 왼쪽 하단의 윈도우 버튼을 누르신 후 “명령 프롬프트”라고 입력하시면 찾으실 수 있습니다.</li>
+</ul>
+<p>윈도우에서 단축키로 명령 프롬프트를 여는 방법은 다음과 같습니다.</p>
+<ul>
+<li>윈도우 버튼 + r 를 입력, “실행” 프로그램을 띄웁니다.</li>
+<li>실행 프로그램에서 열기: 부분에 <strong>cmd</strong>를 입력하고 확인을 누릅니다.</li>
+</ul>
+<p>참고로 윈도우 키는 일반적으로 키보드 좌측 Ctrl 키와 Alt 키 사이에 있어요.</p>
+<p>맥의 경우엔 Spotlight에서 터미널이라고 입력하시면 찾을 수 있습니다.</p>
+<h2 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="* Visual Studio Code"></a>* Visual Studio Code</h2><p><a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code 공식 홈페이지</a>에서 다운받아 설치하십시오.</p>
+<p>Visual Studio Code(이하, vscode)는 개발할 때 사용하는 텍스트 에디터입니다. 이와 비슷한 프로그램으로 <a href="https://www.sublimetext.com/" target="_blank" rel="noopener">Sublime Text</a>, <a href="https://atom.io/" target="_blank" rel="noopener">Atom</a> 등이 있습니다. 필자는 javascript 개발 시 vscode를 사용하기 때문에 이 글에서도 이 프로그램으로 진행할 것입니다.</p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/vscode.PNG" title="vscode 웹사이트">
+<p>위의 Download for Windows 버튼으로 다운로드 받으십시오. 타 OS를 사용하시는 경우 해당 버전에 맞는 다운로드 버튼이 나타납니다.</p>
+<p><a href="http://lovesoda.tistory.com/20" target="_blank" rel="noopener">설치 과정이 필요하시면 이 글을 참고하셔도 좋을 것 같습니다.</a></p>
+<p>한 가지 Tip을 드리자면 설치 도중 “Code(으)로 열기”작업을 Windows 탐색기 파일의 상황에 맞는 메뉴에 추가, 디렉터리의 상황에 맞는 메뉴에 추가 항목을 <strong>체크</strong>하세요.</p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/mouseright.PNG" title="Open with Code">
+<p>위의 사진처럼 폴더나 파일을 마우스 우클릭 시 Open with Code가 생깁니다. 파일이나 폴더를 vscode로 열기 수월해집니다.</p>
+<h2 id="ngrok"><a href="#ngrok" class="headerlink" title="* ngrok"></a>* ngrok</h2><p><a href="https://ngrok.com/" target="_blank" rel="noopener">ngrok 홈페이지</a>서 다운로드 받으세요. 가입도 필요합니다.</p>
+<img src="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/ngrok.PNG" title="ngrok">
+<p>다운 받으시면 아시겠지만 ngrok라는 프로그램은 단일 실행파일로 이루어져 있습니다. 이 프로그램은 더블클릭으로 실행할 수 있는 프로그램이 아니며, 터미널을 통해 명령어로 동작하게 됩니다.<br>이 프로그램은 사용자의 서버를 https 서버로 만들어줄 수 있습니다.</p>
+<p>https 서버란</p>
+<blockquote><p>HTTPS(Hypertext Transfer Protocol over Secure Socket Layer, HTTP over TLS, HTTP over SSL, HTTP Secure)는 월드 와이드 웹 통신 프로토콜인 HTTP의 보안이 강화된 버전이다.</p>
+<footer><strong>[위키백과] [https://ko.wikipedia.org/wiki/HTTPS] [HTTPS]</strong></footer></blockquote>
+<p>기본적으로 https 서버를 구동하기 위해서는 도메인과 인증서가 필요합니다. 그러나 위 프로그램을 사용할 경우 이 둘을 단순하게 해결해줍니다. 그 방법은 차후 설명하겠습니다.</p>
+<p><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">node.js로 기본적인 서버 만들기로 이동</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/" data-id="cjhr84ilu0000ycvfg5syusf6" class="article-share-link">공유</a>
+      
+        <a href="https://ohseunghyeon.github.io/2018/03/21/node-js로-페이스북-챗봇-만들기-2/#disqus_thread" class="article-comment-link">댓글</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-눈이-왔다" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/21/눈이-왔다/" class="article-date">
@@ -117,7 +216,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/21/눈이-왔다/" data-id="cjh70ioha000q7kvfce9yj0n3" class="article-share-link">공유</a>
+      <a data-url="https://ohseunghyeon.github.io/2018/03/21/눈이-왔다/" data-id="cjhr84imq000nycvfj1zneeob" class="article-share-link">공유</a>
       
         <a href="https://ohseunghyeon.github.io/2018/03/21/눈이-왔다/#disqus_thread" class="article-comment-link">댓글</a>
       
@@ -189,59 +288,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/" data-id="cjh70iog800007kvfgy4f3xhx" class="article-share-link">공유</a>
+      <a data-url="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/" data-id="cjhr84ilu0005ycvf5l23ovro" class="article-share-link">공유</a>
       
         <a href="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/#disqus_thread" class="article-comment-link">댓글</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-오디맛-단지-우유" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/20/오디맛-단지-우유/" class="article-date">
-  <time datetime="2018-03-20T09:28:35.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/일기/">일기</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/20/오디맛-단지-우유/">오디맛 단지 우유</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>집에 오는 길에 편의점을 들렀다.<br>오디맛 우유는 정말 맛 없어.<br>생긴 건 보라색.<br>처음엔 오! 새로 나왔나 봐! 하면서 기대했는데..<br>직접 먹어보니 맛이 없다.</p>
-<p>이렇게 생겼지.<br><img src="/2018/03/20/오디맛-단지-우유/milk.JPG" title="오디맛 단지 우유"></p>
-<p>근데 얘는 왜 돌아가 있을까?</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/20/오디맛-단지-우유/" data-id="cjh70ioh9000m7kvfmhq8wc0q" class="article-share-link">공유</a>
-      
-        <a href="https://ohseunghyeon.github.io/2018/03/20/오디맛-단지-우유/#disqus_thread" class="article-comment-link">댓글</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/단지우유/">단지우유</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/빙그레/">빙그레</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/오디맛/">오디맛</a></li></ul>
 
     </footer>
   </div>
@@ -265,7 +317,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">카테고리</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/chatbot/">chatbot</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/일기/">일기</a><span class="category-list-count">7</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/chatbot/">chatbot</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/일기/">일기</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -294,7 +346,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">아카이브</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -305,6 +357,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">최근 포스트</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/29/한가한-요즘/">한가한 요즘</a>
+          </li>
         
           <li>
             <a href="/2018/05/15/역동적인-모닝-비둘기/">역동적인 모닝 비둘기</a>
@@ -320,10 +376,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/04/05/일이-매일-쌓여만-간다/">일이 매일 쌓여만 간다.</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/03/구구구구/">구구구구</a>
           </li>
         
       </ul>
