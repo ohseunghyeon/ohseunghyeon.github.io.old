@@ -85,6 +85,124 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-눈이-왔다" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/21/눈이-왔다/" class="article-date">
+  <time datetime="2018-03-21T12:06:55.000Z" itemprop="datePublished">2018-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/일기/">일기</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/21/눈이-왔다/">눈이 왔다.</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>눈만 온 건 아니지. 비도 아주 조금 내렸다.<br>오늘 눈은 싸리눈 같았다. 되게 비 맞는 느낌의 눈..<br>그리고 날이 상당히 추워졌다. 그치만 내일은 따뜻했으면 좋겠어.<br>내일 모레도. 그 다음 날도.</p>
+<p>아침에 비둘기들을 봤다. 출근길에 봤는데, 길가에서 모여 있었다.<br>부지런해.. 부지런해. 비둘기들 부지런해!<br>나도 비둘기들처럼 부지런히 어딘가 가서 열심히 쪼아 먹어야겠다.</p>
+<img src="/2018/03/21/눈이-왔다/qlenf.jpg" title="구구구구구">
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ohseunghyeon.github.io/2018/03/21/눈이-왔다/" data-id="cjj577sl9000zhovfo18jldvo" class="article-share-link">공유</a>
+      
+        <a href="https://ohseunghyeon.github.io/2018/03/21/눈이-왔다/#disqus_thread" class="article-comment-link">댓글</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/비둘기/">비둘기</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-node-js로-페이스북-챗봇-만들기-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/" class="article-date">
+  <time datetime="2018-03-20T10:26:31.000Z" itemprop="datePublished">2018-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/chatbot/">chatbot</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/">node.js로 페이스북 챗봇 만들기-1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h2><ol>
+<li><a href="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/">서문</a></li>
+<li><a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">개발을 하기 위한 환경 준비</a><ul>
+<li>node.js</li>
+<li>Visual Studio Code</li>
+<li>ngrok</li>
+</ul>
+</li>
+<li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">node.js로 기본적인 서버 만들기</a><ul>
+<li><a href="/2018/03/22/node-js로-페이스북-챗봇-만들기-3">hello world</a></li>
+<li><a href="/2018/03/24/node-js로-페이스북-챗봇-만들기-4">HTTP 서버 만들기</a></li>
+<li><a href="/2018/03/29/node-js로-페이스북-챗봇-만들기-5">HTTP 서버 요청 핸들링</a></li>
+</ul>
+</li>
+<li><a href="/2018/04/01/node-js로-페이스북-챗봇-만들기-6">facebook messenger와 서버 연동하기</a></li>
+<li>AWS lambda에 올리기</li>
+</ol>
+<h1 id="1-서문"><a href="#1-서문" class="headerlink" title="1. 서문"></a>1. 서문</h1><h2 id="독자-대상"><a href="#독자-대상" class="headerlink" title="독자 대상"></a>독자 대상</h2><p>이 글은 프로그래밍에 대한 아주 얕은 지식을 가진 분을 대상으로 합니다. 그래서 이 글은 자잘하고 쓰잘떼기 없는 지식들을 상당히 많이 담고 있습니다. 저 또한 이 글의 실제 목적이 무엇인지는 알지 못함이며 그저 기록을 남기는 데 충실하겠다는 생각으로 적고 있습니다.</p>
+<p>저는 최근 <a href="https://www.facebook.com/messages/t/Originals.kr" target="_blank" rel="noopener">아디다스 오리지널스</a> 챗봇을 제작했습니다. (기획 X, 코딩 O)<br>이 챗봇은 매우 간단한 구조로 되어 있습니다.<br><em>“그래서 이 정도의 간단한 구조라면 누군가 보고 따라해도 만들 수 있는 수준이겠다.”</em>고 판단되어 글을 적기로 했어요.</p>
+<p>다음은 그 구조에 대한 간략한 단계입니다.</p>
+<p><strong>1. 페이스북 챗봇에서 사용자의 입력</strong><br><strong>2. 서버로 요청, 서버는 대답을 찾아서 응답</strong><br><strong>3. 페이스북 챗봇에서 사용자 입력에 대한 대답 출력</strong></p>
+<p>이 절차를 위해서는 세 가지 요소가 필요합니다.</p>
+<p><strong>1. 사용자</strong><br><strong>2. 사용자가 채팅을 할 수 있는 플랫폼</strong><br><strong>3. 사용자 입력을 처리할 서버</strong></p>
+<p><strong>사용자</strong>는 말 안 해도 아시죠?<br>다음 <strong>2번</strong>인 <strong>채팅창</strong>은 페이스북 메신저를 사용할 생각입니다. 이와 비슷한 플랫폼은 카카오톡 플러스 친구, 네이버톡톡, 슬랙 등 각종 메신저 플랫폼이 될 수 있습니다. (모든 메신저가 가능한 것은 아닙니다. 이런 기능을 제공할 경우에만 가능합니다.)</p>
+<img src="/2018/03/20/node-js로-페이스북-챗봇-만들기-1/facebook_adidas.png" title="아디다스 오리지널스 챗봇">
+<p>이 사진은 아디다스 오리지널스 챗봇의 도입 부분입니다. 페이스북 페이지를 생성한 후 해당 페이지의 웹훅(webhook)을 연결하면 이렇게 작동합니다. 웹훅은 훅은 hook를 의미합니다. 즉, 갈고리라는 뜻인데요, 이 갈고리를 다른 곳에 연결한다는 의미를 갖고 있습니다. 실제 동작은 뒤에서 알아보도록 하겠습니다.</p>
+<p>다음은 <strong>서버</strong>입니다. 서버는 node.js를 사용하여 만들 것입니다. node.js에 대한 설명은 <a href="https://ko.wikipedia.org/wiki/Node.js" target="_blank" rel="noopener">위키백과</a>나 <a href="https://nodejs.org/ko/" target="_blank" rel="noopener">node.js 공식 홈페이지</a>를 참조하십시오. 간단히 설명하자면, Javascript를 사용하여 서버를 만들 수 있는 플랫폼입니다.</p>
+<p><a href="/2018/03/21/node-js로-페이스북-챗봇-만들기-2/">node.js로 페이스북 챗봇 만들기 2</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/" data-id="cjj577skg0005hovfcsa1qvko" class="article-share-link">공유</a>
+      
+        <a href="https://ohseunghyeon.github.io/2018/03/20/node-js로-페이스북-챗봇-만들기-1/#disqus_thread" class="article-comment-link">댓글</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/aws-lambda/">aws lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chatbot/">chatbot</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/챗봇/">챗봇</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-오디맛-단지-우유" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/20/오디맛-단지-우유/" class="article-date">
@@ -118,7 +236,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/20/오디맛-단지-우유/" data-id="cjhr84imq0010ycvfzlnosly2" class="article-share-link">공유</a>
+      <a data-url="https://ohseunghyeon.github.io/2018/03/20/오디맛-단지-우유/" data-id="cjj577sl4000shovfzdgj3x29" class="article-share-link">공유</a>
       
         <a href="https://ohseunghyeon.github.io/2018/03/20/오디맛-단지-우유/#disqus_thread" class="article-comment-link">댓글</a>
       
@@ -132,58 +250,11 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-이-블로그를-시작하게-되기까지" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/18/이-블로그를-시작하게-되기까지/" class="article-date">
-  <time datetime="2018-03-18T05:32:59.000Z" itemprop="datePublished">2018-03-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/일기/">일기</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/18/이-블로그를-시작하게-되기까지/">이 블로그를 시작하게 되기까지</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>일기를 쓰고 싶었다. 기술적인 얘기를 주구장창 늘어놓는 건 너무 귀찮아.<br>가끔 어떤 생각을 쓰고 싶었다. 혹은 어떤 사건이 있을 때 적고 싶었고.<br>아마 대나무 숲이 필요했던 것 같다.</p>
-<p>그래서 찾다보니 hexo를 찾았다. 처음 찾은 건 아마 작년 중순 쯤이었던 것 같은데, 이거 하나 만드는 게 너무 귀찮았다. 나는 정말 귀차니즘이 심하니까. 회사에서는 종일 개발하고 있으면서 집에서는 이거 하나 만드는 게 그렇게도 귀찮았나보다. 하지만 오늘 드디어 만들기로 했고 이 글을 적고 있다.</p>
-<p>hexo를 깔아보니 theme이 있다. 다른 사람들이 만들어놓은 theme을 보는데 어떻게 한 개도 마음에 드는 걸 찾을 수가 없을까? 내가 까다로운 거야 아니면 이쁘게 만든 게 하나도 없는 거야? 아마 후자일 것 같다. 다들 대충 대충 만들어놓은 느낌이야. 그냥 나도 내 마음대로 나중에 대충대충 스타일 수정해서 만들래. 하지만 그건 또 언제일까? hexo 기본 테마에서 상단의 우주 사진만 바꾸고 그냥 둘 것 같다.. 이것도 나쁘진 않아. 다만 우주 사진이 정말 좀 그렇네. 그리고 ejs도 마음에 안 들어! 왜 이런 걸 쓰는 거야! jade보다는 낫다. jade는 진짜 싫어!! 닫는 태그 좀 안 쓰는 거 빼고는 엉망이야.</p>
-<p>(이 블로그는 아무래도 정말 이상해질 것 같다.)</p>
-<p>그런데 카테고리는 어떻게 넣는 걸까? 카테고리가 필요한데. 그리고 about 같은 페이지도 있으면 좋겠는데 어떻게 넣는지 한 번 찾아봐야겠다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ohseunghyeon.github.io/2018/03/18/이-블로그를-시작하게-되기까지/" data-id="cjhr84imq0014ycvfsu6pl11g" class="article-share-link">공유</a>
-      
-        <a href="https://ohseunghyeon.github.io/2018/03/18/이-블로그를-시작하게-되기까지/#disqus_thread" class="article-comment-link">댓글</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo; 이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; 이전</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">다음 &raquo;</a>
   </nav>
 
 </section>
@@ -194,7 +265,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">카테고리</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/chatbot/">chatbot</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/일기/">일기</a><span class="category-list-count">8</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/chatbot/">chatbot</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/node-js/">node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/일기/">일기</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -204,7 +275,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">태그</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS25/">GS25</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-lambda/">aws lambda</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot/">chatbot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/단지우유/">단지우유</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비둘기/">비둘기</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/빙그레/">빙그레</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연어장/">연어장</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오디맛/">오디맛</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/챗봇/">챗봇</a><span class="tag-list-count">6</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/GS25/">GS25</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aws-lambda/">aws lambda</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chatbot/">chatbot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/facebook-messenger/">facebook messenger</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/단지우유/">단지우유</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/비둘기/">비둘기</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/빙그레/">빙그레</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/연어장/">연어장</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/오디맛/">오디맛</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/챗봇/">챗봇</a><span class="tag-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -223,7 +294,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">아카이브</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">10</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">7월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">6월 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -236,6 +307,14 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2018/07/03/코타키나발루-비둘기/">코타키나발루 비둘기</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/26/npm-모듈-설치-시-node-gyp-rebuild-에러가-날-때/">npm 모듈 설치 시 node-gyp rebuild 에러가 날 때</a>
+          </li>
+        
+          <li>
             <a href="/2018/05/29/한가한-요즘/">한가한 요즘</a>
           </li>
         
@@ -245,14 +324,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2018/05/13/마로니에공원-비둘기/">마로니에공원 비둘기</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/22/node-js로-페이스북-챗봇-만들기-7/">node.js로 페이스북 챗봇 만들기 7</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/05/일이-매일-쌓여만-간다/">일이 매일 쌓여만 간다.</a>
           </li>
         
       </ul>
